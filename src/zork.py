@@ -1,6 +1,6 @@
 import items
 
-def room1(inputstr):
+def room1(inputstr, itemlist):	#lake
 	life = True
 	room = 1
 	if inputstr.lower() == ("go south"):
@@ -24,7 +24,36 @@ def room1(inputstr):
 		print("---------------------------------------------------------")
 	return [room, life]
 
-def room4(inputstr):
+def room2(inputstr, itemlist):	#Back of house
+	life = True
+	room = 2
+	if inputstr.lower() == ("go west"):
+		print("---------------------------------------------------------")
+		print("Opening a rickety window you climb into the house.")
+		room = #FIXME
+	elif inputstr.lower() == ("go south"):
+		room = 3
+	elif inputstr.lower() == ("cook"):
+		print("---------------------------------------------------------")
+		print("You never bothered to learn and don't want to burn the house down.")
+	elif inputstr.lower() == ("fish"):
+		print("---------------------------------------------------------")
+		print("You spend some time fishing but nothing seems to bite.")
+	elif inputstr.lower() == ("kick the bucket"):
+		print("---------------------------------------------------------")
+		print("You die.")
+		print("---------------------------------------------------------")
+		dead_inp = input("Do you want to continue? Y/N ")
+		if dead_inp.lower() == ("n"):
+			life = False
+		if dead_inp.lower() == ("y"):
+			life = True
+	else:
+		print("---------------------------------------------------------")
+	return [room, life]
+
+
+def room4(inputstr, itemlist):
 	life = True
 	room = 4
 	if inputstr.lower() == ("take mailbox"):
@@ -36,11 +65,7 @@ def room4(inputstr):
 	elif inputstr.lower() == ("go north"):
 		room = 1
 	elif inputstr.lower() == ("open door"):
-		print("---------------------------------------------------------")
-		print("The door cannot be opened.")
-	elif inputstr.lower() == ("take boards"):
-		print("---------------------------------------------------------")
-		print("The boards are securely fastened.")
+		room = 2
 	elif inputstr.lower() == ("look at house"):
 		print("---------------------------------------------------------")
 		print("The house is a beautiful colonial house which is painted white. It is clear that the owners must have been extremely wealthy.")
@@ -62,7 +87,7 @@ def room4(inputstr):
 		print("---------------------------------------------------------")
 	return [room, life]
 
-def room8(inputstr):
+def room8(inputstr, itemlist):
 	life = True
 	room = 8
 	if inputstr.lower() == ("go west"):
@@ -89,7 +114,7 @@ def room8(inputstr):
 		print("---------------------------------------------------------")
 	return [room, life]
 		
-def room9(inputstr):
+def room9(inputstr, itemlist):
 	life = True
 	room = 9
 	if inputstr.lower() == ("go south"):
@@ -110,77 +135,63 @@ def room9(inputstr):
 		print("---------------------------------------------------------")	
 	return [room, life]
 
+def room10(inputstr, itemlist):
+	life = True
+	room = 10
+	if inputstr.lower() == ("descend staircase"):
+		room = 11
+	elif inputstr.lower() == ("take skeleton"):
+		print("---------------------------------------------------------")
+		print("Why would you do that? Are you some sort of sicko?")
+	elif inputstr.lower() == ("smash skeleton"):
+		print("---------------------------------------------------------")
+		print("Sick person. Have some respect mate.")
+	elif inputstr.lower() == ("light up room"):
+		print("---------------------------------------------------------")
+		print("You would need a torch or lamp to do that.")
+	elif inputstr.lower() == ("break skeleton"):
+		print("---------------------------------------------------------")
+		print("I have two questions: Why and With What?")
+	elif inputstr.lower() == ("go down staircase"):
+		loop = 11
+	elif inputstr.lower() == ("scale staircase"):
+		loop = 11
+	elif inputstr.lower() == ("kick the bucket"):
+		print("---------------------------------------------------------")
+		print("You die.")
+		print("---------------------------------------------------------")
+		dead_inp = input("Do you want to continue? Y/N ")
+		if dead_inp.lower() == ("n"):
+			life = False
+		if dead_inp.lower() == ("y"):
+			life = True
+	elif inputstr.lower() == ("scale staircase"):
+		loop = 11
+	else:
+		print("---------------------------------------------------------")
+	return [room, life]
 
-
-'''
-		# Grating Loop and Cave Input
-		while loop == 10:
-			if loop == 10:
-				print("---------------------------------------------------------")
-				print("You are in a tiny cave with a dark, forbidding staircase leading down.")
-				print("There is a skeleton of a human male in one corner.")
-				cave_inp = input("What do you do? ")
-
-			if cave_inp.lower() == ("descend staircase"):
-				loop = 11
-			elif cave_inp.lower() == ("take skeleton"):
-				print("---------------------------------------------------------")
-				print("Why would you do that? Are you some sort of sicko?")
-			elif cave_inp.lower() == ("smash skeleton"):
-				print("---------------------------------------------------------")
-				print("Sick person. Have some respect mate.")
-			elif cave_inp.lower() == ("light up room"):
-				print("---------------------------------------------------------")
-				print("You would need a torch or lamp to do that.")
-			elif cave_inp.lower() == ("break skeleton"):
-				print("---------------------------------------------------------")
-				print("I have two questions: Why and With What?")
-			elif cave_inp.lower() == ("go down staircase"):
-				loop = 11
-			elif cave_inp.lower() == ("scale staircase"):
-				loop = 11
-			elif cave_inp.lower() == ("kick the bucket"):
-				print("---------------------------------------------------------")
-				print("You die.")
-				print("---------------------------------------------------------")
-				dead_inp = input("Do you want to continue? Y/N ")
-				if dead_inp.lower() == ("n"):
-					exit()
-				if dead_inp.lower() == ("y"):
-					Play_Zork()
-			elif cave_inp.lower() == ("scale staircase"):
-				loop = 11
-			else:
-				print("---------------------------------------------------------")
-
-
-		# End of game
-		while loop == 11:
-			if loop == 11:
-				print("---------------------------------------------------------")
-				print("You have entered a mud-floored room.")
-				print("Lying half buried in the mud is an old trunk, bulging with jewels.")
-				last_inp = input("What do you do? ")
-
-			if last_inp.lower() == ("open trunk"):
-				print("---------------------------------------------------------")
-				print("You have found the Jade Statue and have completed your quest!")
-			elif last.inp.lower() == ("kick the bucket"):
-				print("---------------------------------------------------------")
-				print("You die.")
-				print("---------------------------------------------------------")
-				dead_inp = input("Do you want to continue? Y/N ")
-				if dead_inp.lower() == ("n"):
-					exit()
-				if dead_inp.lower() == ("y"):
-					Play_Zork()
-			else:
-				print("---------------------------------------------------------")
-			
-			# Exit loop at the end of game
-			exit_inp = input("Do you want to continue? Y/N ")
-			if exit_inp.lower() == ("n"):
-				exit()
-			if exit_inp.lower() == ("y"):
-				Play_Zork()
-'''
+def room11(inputstr, itemlist):
+	life = True
+	room = 11
+	if inputstr.lower() == ("open trunk"):
+		print("---------------------------------------------------------")
+		print("You have found the Jade Statue and have completed your quest!")
+		exit_inp = input("Do you want to continue? Y/N ")
+		if exit_inp.lower() == ("n"):
+			life = False
+		if exit_inp.lower() == ("y"):
+			life = True
+	elif inputstr.lower() == ("kick the bucket"):
+		print("---------------------------------------------------------")
+		print("You die.")
+		print("---------------------------------------------------------")
+		dead_inp = input("Do you want to continue? Y/N ")
+		if dead_inp.lower() == ("n"):
+			life = False
+		if dead_inp.lower() == ("y"):
+			life = True
+	else:
+		print("---------------------------------------------------------")
+	
+	return [room, life]
