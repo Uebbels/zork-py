@@ -62,63 +62,57 @@ def room4(inputstr):
 		print("---------------------------------------------------------")
 	return [room, life]
 
-		# Southwest Loop
-		while loop == 8:
-			if loop == 8:
-				print("---------------------------------------------------------")
-				print("This is a forest, with trees in all directions. To the east, there appears to be sunlight.")
-				forest_inp = input("What do you do? ")
-
-			if forest_inp.lower() == ("go west"):
-				print("---------------------------------------------------------")
-				print("You would need a machete to go further west.")
-			elif forest_inp.lower() == ("go north"):
-				print("---------------------------------------------------------")
-				print("The forest becomes impenetrable to the North.")
-			elif forest_inp.lower() == ("go south"):
-				print("---------------------------------------------------------")
-				print("Storm-tossed trees block your way.")
-			elif forest_inp.lower() == ("go east"):
-				loop = 9
-			elif forest_inp.lower() == ("kick the bucket"):
-				print("---------------------------------------------------------")
-				print("You die.")
-				print("---------------------------------------------------------")
-				dead_inp = input("Do you want to continue? Y/N ")
-				if dead_inp.lower() == ("n"):
-					exit()
-				if dead_inp.lower() == ("y"):
-					Play_Zork()
-			else:
-				print("---------------------------------------------------------")
+def room8(inputstr):
+	life = True
+	room = 8
+	if inputstr.lower() == ("go west"):
+		print("---------------------------------------------------------")
+		print("You would need a machete to go further west.")
+	elif inputstr.lower() == ("go north"):
+		print("---------------------------------------------------------")
+		print("The forest becomes impenetrable to the North.")
+	elif inputstr.lower() == ("go south"):
+		print("---------------------------------------------------------")
+		print("Storm-tossed trees block your way.")
+	elif inputstr.lower() == ("go east"):
+		room = 9
+	elif inputstr.lower() == ("kick the bucket"):
+		print("---------------------------------------------------------")
+		print("You die.")
+		print("---------------------------------------------------------")
+		dead_inp = input("Do you want to continue? Y/N ")
+		if dead_inp.lower() == ("n"):
+			life = False
+		if dead_inp.lower() == ("y"):
+			life = True
+	else:
+		print("---------------------------------------------------------")
+	return [room, life]
 		
-
-		# East Loop and Grating Input
-		while loop == 9:
-			if loop == 9:
-				print("---------------------------------------------------------")
-				print("You are in a clearing, with a forest surrounding you on all sides. A path leads south.")
-				print("There is an open grating, descending into darkness.")
-				grating_inp = input("What do you do? ")
-
-			if grating_inp.lower() == ("go south"):
-				print("---------------------------------------------------------")
-				print("You see a large ogre and turn around.")
-			elif grating_inp.lower() == ("descend grating"):
-				loop = 10
-			elif grating_inp.lower() == ("kick the bucket"):
-				print("---------------------------------------------------------")
-				print("You die.")
-				print("---------------------------------------------------------")
-				dead_inp = input("Do you want to continue? Y/N ")
-				if dead_inp.lower() == ("n"):
-					exit()
-				if dead_inp.lower() == ("y"):
-					Play_Zork()
-			else:
-				print("---------------------------------------------------------")	
+def room9(inputstr):
+	life = True
+	room = 9
+	if inputstr.lower() == ("go south"):
+		print("---------------------------------------------------------")
+		print("You see a large ogre and turn around.")
+	elif inputstr.lower() == ("descend grating"):
+		room = 10
+	elif inputstr.lower() == ("kick the bucket"):
+		print("---------------------------------------------------------")
+		print("You die.")
+		print("---------------------------------------------------------")
+		dead_inp = input("Do you want to continue? Y/N ")
+		if dead_inp.lower() == ("n"):
+			life = False
+		if dead_inp.lower() == ("y"):
+			life = True
+	else:
+		print("---------------------------------------------------------")	
+	return [room, life]
 
 
+
+'''
 		# Grating Loop and Cave Input
 		while loop == 10:
 			if loop == 10:
@@ -189,3 +183,4 @@ def room4(inputstr):
 				exit()
 			if exit_inp.lower() == ("y"):
 				Play_Zork()
+'''

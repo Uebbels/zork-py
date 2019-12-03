@@ -4,10 +4,10 @@ import zork
 
 life = True
 room = 4
+print("---------------------------------------------------------")
+print("Welcome to Zork - The Unofficial Python Version.")
 
 while life:
-    print("---------------------------------------------------------")
-    print("Welcome to Zork - The Unofficial Python Version.")
     if room == 1:
         print("---------------------------------------------------------")
         print("You find yourself at the edge of a beautiful lake aside rolling hills.")
@@ -30,6 +30,22 @@ while life:
         room = outcome[0]
         life = outcome[1]
         
+    elif room == 8:
+        print("---------------------------------------------------------")
+        print("This is a forest, with trees in all directions. To the east, there appears to be sunlight.")
+        action = input("What do you do? ")
+        outcome = zork.room8(action)
+        room = outcome[0]
+        life = outcome[1]
+
+    elif room == 9:
+		print("---------------------------------------------------------")
+		print("You are in a clearing, with a forest surrounding you on all sides. A path leads south.")
+		print("There is an open grating, descending into darkness.")
+		action = input("What do you do? ")
+        outcome = zork.room9(action)
+        room = outcome[0]
+        life = outcome[1]
     else:
         print('THIS IS AN ERROR! ROOM %s NOT DEFINED' % room)
         room = int(input('please choose room number'))
