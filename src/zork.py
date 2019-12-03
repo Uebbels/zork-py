@@ -1,84 +1,66 @@
 import items
 
-def Play_Zork():
-	loop = 4
-	print("---------------------------------------------------------")
-	print("Welcome to Zork - The Unofficial Python Version.")
+def room1(inputstr):
+	life = True
+	room = 1
+	if inputstr.lower() == ("go south"):
+		room = 4
+	elif inputstr.lower() == ("swim"):
+		print("---------------------------------------------------------")
+		print("You don't have a change of clothes and you aren't here on vacation.")
+	elif inputstr.lower() == ("fish"):
+		print("---------------------------------------------------------")
+		print("You spend some time fishing but nothing seems to bite.")
+	elif inputstr.lower() == ("kick the bucket"):
+		print("---------------------------------------------------------")
+		print("You die.")
+		print("---------------------------------------------------------")
+		dead_inp = input("Do you want to continue? Y/N ")
+		if dead_inp.lower() == ("n"):
+			life = False
+		if dead_inp.lower() == ("y"):
+			life = True
+	else:
+		print("---------------------------------------------------------")
+	return [room, life]
 
-	while True:
-		# First Input Loop
-		while loop == 4:
-			if loop == 4:
-				print("---------------------------------------------------------")
-				print("You are standing in an open field west of a white house, with a boarded front door.")
-				print("You can see a small lake to the north.")
-				print("(A secret path leads southwest into the forest.)")
-				print("There is a Small Mailbox.")
-				second = input("What do you do? ")
-
-			if second.lower() == ("take mailbox"):
-				print("---------------------------------------------------------")
-				print("It is securely anchored.")
-			elif second.lower() == ("open mailbox"):
-				print("---------------------------------------------------------")
-				print("Opening the small mailbox reveals a leaflet.")
-			elif second.lower() == ("go north"):
-				loop = 1
-			elif second.lower() == ("open door"):
-				print("---------------------------------------------------------")
-				print("The door cannot be opened.")
-			elif second.lower() == ("take boards"):
-				print("---------------------------------------------------------")
-				print("The boards are securely fastened.")
-			elif second.lower() == ("look at house"):
-				print("---------------------------------------------------------")
-				print("The house is a beautiful colonial house which is painted white. It is clear that the owners must have been extremely wealthy.")
-			elif second.lower() == ("go southwest"):
-				loop = 8
-			elif second.lower() == ("read leaflet"):
-				print("---------------------------------------------------------")
-				print("Welcome to the Unofficial Python Version of Zork. Your mission is to find a Jade Statue.")
-			elif second.lower() == ("kick the bucket"):
-				print("---------------------------------------------------------")
-				print("You die.")
-				print("---------------------------------------------------------")
-				dead_inp = input("Do you want to continue? Y/N ")
-				if dead_inp.lower() == ("n"):
-					exit()
-				if dead_inp.lower() == ("y"):
-					Play_Zork()
-			else:
-				print("---------------------------------------------------------")
-
-		# North of House
-		while loop == 1:
-			if loop == 1:
-				print("---------------------------------------------------------")
-				print("You find yourself at the edge of a beautiful lake aside rolling hills.")
-				print("A small pier juts out into the lake.")
-				print("A fishing rod rests on the pier.")
-				print("(You can see a white house in the distance to the south.)")
-				north_house_inp = input("What do you do? ")
-
-			if north_house_inp.lower() == ("go south"):
-				loop = 4
-			elif north_house_inp.lower() == ("swim"):
-				print("---------------------------------------------------------")
-				print("You don't have a change of clothes and you aren't here on vacation.")
-			elif north_house_inp.lower() == ("fish"):
-				print("---------------------------------------------------------")
-				print("You spend some time fishing but nothing seems to bite.")
-			elif north_house_inp.lower() == ("kick the bucket"):
-				print("---------------------------------------------------------")
-				print("You die.")
-				print("---------------------------------------------------------")
-				dead_inp = input("Do you want to continue? Y/N ")
-				if dead_inp.lower() == ("n"):
-					exit()
-				if dead_inp.lower() == ("y"):
-					Play_Zork()
-			else:
-				print("---------------------------------------------------------")
+def room4(inputstr):
+	life = True
+	room = 4
+	if inputstr.lower() == ("take mailbox"):
+		print("---------------------------------------------------------")
+		print("It is securely anchored.")
+	elif inputstr.lower() == ("open mailbox"):
+		print("---------------------------------------------------------")
+		print("Opening the small mailbox reveals a leaflet.")
+	elif inputstr.lower() == ("go north"):
+		room = 1
+	elif inputstr.lower() == ("open door"):
+		print("---------------------------------------------------------")
+		print("The door cannot be opened.")
+	elif inputstr.lower() == ("take boards"):
+		print("---------------------------------------------------------")
+		print("The boards are securely fastened.")
+	elif inputstr.lower() == ("look at house"):
+		print("---------------------------------------------------------")
+		print("The house is a beautiful colonial house which is painted white. It is clear that the owners must have been extremely wealthy.")
+	elif inputstr.lower() == ("go southwest"):
+		room = 8
+	elif inputstr.lower() == ("read leaflet"):
+		print("---------------------------------------------------------")
+		print("Welcome to the Unofficial Python Version of Zork. Your mission is to find a Jade Statue.")
+	elif inputstr.lower() == ("kick the bucket"):
+		print("---------------------------------------------------------")
+		print("You die.")
+		print("---------------------------------------------------------")
+		dead_inp = input("Do you want to continue? Y/N ")
+		if dead_inp.lower() == ("n"):
+			life = False
+		elif dead_inp.lower() == ("y"):
+			life = True
+	else:
+		print("---------------------------------------------------------")
+	return [room, life]
 
 		# Southwest Loop
 		while loop == 8:
