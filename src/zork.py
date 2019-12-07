@@ -29,9 +29,10 @@ def room2(inputstr, itemlist):	#Back of house
 	room = 2
 	if inputstr.lower() == ("go west"):
 		print("---------------------------------------------------------")
-		print("You tryu and climb in a window, because the window is not implemented.")
-	elif inputstr.lower() == ("go south"):
+		print("Opening a rickety window you climb into the house.")
 		room = 3
+	elif inputstr.lower() == ("go south"):
+		room = 4
 	elif inputstr.lower() == ("cook"):
 		print("---------------------------------------------------------")
 		print("You never bothered to learn and don't want to burn the house down.")
@@ -48,6 +49,36 @@ def room2(inputstr, itemlist):	#Back of house
 		print("---------------------------------------------------------")
 	return [room, life]
 
+def room3(inputstr, itemlist):	#Kitchen
+	life = True
+	room = 3
+	if inputstr.lower() == ("go east"):
+		print("---------------------------------------------------------")
+		print("You climb back out the window.")
+		room = 2
+	if inputstr.lower() == ("go up"):
+		print("---------------------------------------------------------")
+		print("You climb the stairs into an old attic.")
+		room = 5
+	if inputstr.lower() == ("climb stairs"):
+		print("---------------------------------------------------------")
+		print("You climb the stairs into an old attic.")
+		room = 5
+	if inputstr.lower() == ("take lantern"):
+		print("---------------------------------------------------------")
+		print("The lantern looks too heavy to carry")
+	elif inputstr.lower() == ("kick the bucket"):
+		print("---------------------------------------------------------")
+		print("You die.")
+		print("---------------------------------------------------------")
+		dead_inp = input("Do you want to continue? Y/N ")
+		if dead_inp.lower() == ("n"):
+			life = False
+		if dead_inp.lower() == ("y"):
+			life = True
+	else:
+		print("---------------------------------------------------------")
+	return [room, life]
 
 def room4(inputstr, itemlist):
 	life = True
@@ -70,6 +101,35 @@ def room4(inputstr, itemlist):
 	elif inputstr.lower() == ("read leaflet"):
 		print("---------------------------------------------------------")
 		print("Welcome to the Unofficial Python Version of Zork. Your mission is to find a Jade Statue.")
+	elif inputstr.lower() == ("kick the bucket"):
+		print("---------------------------------------------------------")
+		print("You die.")
+		print("---------------------------------------------------------")
+		dead_inp = input("Do you want to continue? Y/N ")
+		if dead_inp.lower() == ("n"):
+			life = False
+		elif dead_inp.lower() == ("y"):
+			life = True
+	else:
+		print("---------------------------------------------------------")
+	return [room, life]
+
+def room5(inputstr, itemlist):	#Attic
+	life = True
+	room = 5
+	if inputstr.lower() == ("open box"):
+		print("---------------------------------------------------------")
+		print("In the box you find a diary")
+	elif inputstr.lower() == ("take diary"):
+		print("---------------------------------------------------------")
+		print("That seems like a rather rude thing to do")
+	elif inputstr.lower() == ("read diary"):
+		print("---------------------------------------------------------")
+		print("That seems like a rather rude thing to do")
+	elif inputstr.lower() == ("descend stairs"):
+		print("---------------------------------------------------------")
+		print("you climb the stairs back into the kitchen")
+		room = 3
 	elif inputstr.lower() == ("kick the bucket"):
 		print("---------------------------------------------------------")
 		print("You die.")

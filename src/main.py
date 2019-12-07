@@ -20,6 +20,26 @@ while life:
         room = outcome[0]
         life = outcome[1]
 
+    elif room == 2:
+        print("---------------------------------------------------------")
+        print("You find yourself at the back of the house.")
+        print('There is a rickety window to the west.')
+        print('The field lies to the south.')
+        action = input("What do you do? ")
+        outcome = zork.room2(action, itemlist)
+        room = outcome[0]
+        life = outcome[1]
+    
+    elif room == 3:
+        print("---------------------------------------------------------")
+        print("You find yourself in a dimly lit kitchen with dust covering the floor.")
+        print('A lantern rests on the kitchen island.')
+        print('A set of stairs leads up to another room.')
+        action = input("What do you do? ")
+        outcome = zork.room3(action, itemlist)
+        room = outcome[0]
+        life = outcome[1]
+    
     elif room == 4:
         print("---------------------------------------------------------")
         print("You are standing in an open field west of a white house, with a boarded front door.")
@@ -28,6 +48,16 @@ while life:
         print("There is a Small Mailbox.")
         action = input("What do you do? ")
         outcome = zork.room4(action, itemlist)
+        room = outcome[0]
+        life = outcome[1]
+
+    elif room == 5:
+        print("---------------------------------------------------------")
+        print("you find yourself in a dingy attic, filled with dusty boxes.")
+        print("A window shows a clearing deep in the forest.")
+        print("The floor creaks as you walk across it.")
+        action = input("What do you do? ")
+        outcome = zork.room5(action, itemlist)
         room = outcome[0]
         life = outcome[1]
         
