@@ -53,14 +53,33 @@ while life:
 
     elif room == 5:
         print("---------------------------------------------------------")
-        print("you find yourself in a dingy attic, filled with dusty boxes.")
+        print("You find yourself in a dingy attic, filled with dusty boxes.")
         print("A window shows a clearing deep in the forest.")
         print("The floor creaks as you walk across it.")
         action = input("What do you do? ")
         outcome = zork.room5(action, itemlist)
         room = outcome[0]
         life = outcome[1]
-        
+
+    elif room == 6:
+        print("---------------------------------------------------------")
+        print("You are at a dimly lit stone arch.")
+        print("Through the arch, to the south, appears to be a maze of some sort.")
+        print("On the arch , a single word is etched.")
+        print('"BEWARE"')
+        action = input("What do you do? ")
+        outcome = zork.room6(action, itemlist)
+        room = outcome[0]
+        life = outcome[1]
+
+    elif room == 7:
+        print("---------------------------------------------------------")
+        print('Just a few steps into the maze, and you cannot see a thing.')
+        action = input("What do you do? ")
+        outcome = zork.room7(action, itemlist)
+        room = outcome[0]
+        life = outcome[1]
+
     elif room == 8:
         print("---------------------------------------------------------")
         print("This is a forest, with trees in all directions. To the east, there appears to be sunlight.")
@@ -82,6 +101,7 @@ while life:
         print("---------------------------------------------------------")
         print("You are in a tiny cave with a dark, forbidding staircase leading down.")
         print("There is a skeleton of a human male in one corner.")
+        print('There is a crack in the cave wall to the south you might be able to squeze through')
         action = input("What do you do? ")
         outcome = zork.room10(action, itemlist)
         room = outcome[0]

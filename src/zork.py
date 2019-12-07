@@ -57,12 +57,8 @@ def room3(inputstr, itemlist):	#Kitchen
 		print("You climb back out the window.")
 		room = 2
 	if inputstr.lower() == ("go up"):
-		print("---------------------------------------------------------")
-		print("You climb the stairs into an old attic.")
 		room = 5
 	if inputstr.lower() == ("climb stairs"):
-		print("---------------------------------------------------------")
-		print("You climb the stairs into an old attic.")
 		room = 5
 	if inputstr.lower() == ("take lantern"):
 		print("---------------------------------------------------------")
@@ -127,8 +123,6 @@ def room5(inputstr, itemlist):	#Attic
 		print("---------------------------------------------------------")
 		print("That seems like a rather rude thing to do")
 	elif inputstr.lower() == ("descend stairs"):
-		print("---------------------------------------------------------")
-		print("you climb the stairs back into the kitchen")
 		room = 3
 	elif inputstr.lower() == ("kick the bucket"):
 		print("---------------------------------------------------------")
@@ -141,6 +135,51 @@ def room5(inputstr, itemlist):	#Attic
 			life = True
 	else:
 		print("---------------------------------------------------------")
+	return [room, life]
+
+def room6(inputstr, itemlist):	#maze entrance
+	life = True
+	room = 6
+	if inputstr.lower() == ("go south"):
+		room = 7
+	elif inputstr.lower() == ("go north"):
+		room = 10
+	elif inputstr.lower() == ("kick the bucket"):
+		print("---------------------------------------------------------")
+		print("You die.")
+		print("---------------------------------------------------------")
+		dead_inp = input("Do you want to continue? Y/N ")
+		if dead_inp.lower() == ("n"):
+			life = False
+		elif dead_inp.lower() == ("y"):
+			life = True
+	else:
+		print("---------------------------------------------------------")
+	return [room, life]
+
+def room7(inputstr, itemlist):	#maze interior
+	life = True
+	room = 6
+	if inputstr.lower() == ("go north"):
+		room = 6
+	elif inputstr.lower() == ("kick the bucket"):
+		print("---------------------------------------------------------")
+		print("You die.")
+		print("---------------------------------------------------------")
+		dead_inp = input("Do you want to continue? Y/N ")
+		if dead_inp.lower() == ("n"):
+			life = False
+		elif dead_inp.lower() == ("y"):
+			life = True
+	else:
+		print("---------------------------------------------------------")
+		print("You are eaten by the Grue.")
+		print("---------------------------------------------------------")
+		dead_inp = input("Do you want to continue? Y/N ")
+		if dead_inp.lower() == ("n"):
+			life = False
+		elif dead_inp.lower() == ("y"):
+			life = True
 	return [room, life]
 
 def room8(inputstr, itemlist):	#Forest
@@ -170,7 +209,7 @@ def room8(inputstr, itemlist):	#Forest
 		print("---------------------------------------------------------")
 	return [room, life]
 		
-def room9(inputstr, itemlist):
+def room9(inputstr, itemlist):	#Clearing
 	life = True
 	room = 9
 	if inputstr.lower() == ("go south"):
@@ -191,11 +230,13 @@ def room9(inputstr, itemlist):
 		print("---------------------------------------------------------")	
 	return [room, life]
 
-def room10(inputstr, itemlist):
+def room10(inputstr, itemlist):	#cave
 	life = True
 	room = 10
 	if inputstr.lower() == ("descend staircase"):
 		room = 11
+	elif inputstr.lower() == ('go south'):
+		room = 6 
 	elif inputstr.lower() == ("take skeleton"):
 		print("---------------------------------------------------------")
 		print("Why would you do that? Are you some sort of sicko?")
@@ -209,9 +250,9 @@ def room10(inputstr, itemlist):
 		print("---------------------------------------------------------")
 		print("I have two questions: Why and With What?")
 	elif inputstr.lower() == ("go down staircase"):
-		loop = 11
+		room = 11
 	elif inputstr.lower() == ("scale staircase"):
-		loop = 11
+		room = 11
 	elif inputstr.lower() == ("kick the bucket"):
 		print("---------------------------------------------------------")
 		print("You die.")
@@ -221,8 +262,6 @@ def room10(inputstr, itemlist):
 			life = False
 		if dead_inp.lower() == ("y"):
 			life = True
-	elif inputstr.lower() == ("scale staircase"):
-		loop = 11
 	else:
 		print("---------------------------------------------------------")
 	return [room, life]
