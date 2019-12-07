@@ -29,16 +29,12 @@ def room2(inputstr, itemlist):	#Back of house
 	room = 2
 	if inputstr.lower() == ("go west"):
 		print("---------------------------------------------------------")
-		print("Opening a rickety window you climb into the house.")
-		room = #FIXME
+		print("You tryu and climb in a window, because the window is not implemented.")
 	elif inputstr.lower() == ("go south"):
 		room = 3
 	elif inputstr.lower() == ("cook"):
 		print("---------------------------------------------------------")
 		print("You never bothered to learn and don't want to burn the house down.")
-	elif inputstr.lower() == ("fish"):
-		print("---------------------------------------------------------")
-		print("You spend some time fishing but nothing seems to bite.")
 	elif inputstr.lower() == ("kick the bucket"):
 		print("---------------------------------------------------------")
 		print("You die.")
@@ -64,7 +60,7 @@ def room4(inputstr, itemlist):
 		print("Opening the small mailbox reveals a leaflet.")
 	elif inputstr.lower() == ("go north"):
 		room = 1
-	elif inputstr.lower() == ("open door"):
+	elif inputstr.lower() == ("go west"):
 		room = 2
 	elif inputstr.lower() == ("look at house"):
 		print("---------------------------------------------------------")
@@ -87,7 +83,7 @@ def room4(inputstr, itemlist):
 		print("---------------------------------------------------------")
 	return [room, life]
 
-def room8(inputstr, itemlist):
+def room8(inputstr, itemlist):	#Forest
 	life = True
 	room = 8
 	if inputstr.lower() == ("go west"):
