@@ -40,7 +40,7 @@ def room2(inputstr, itemlist):	#Back of house
 	life = True
 	room = 2
 	if inputstr.lower() == ("go west"):
-		if items.useItem('crowbar', room):
+		if items.useItem('crowbar', itemlist):
 			print("---------------------------------------------------------")
 			print("Opening a rickety window you climb into the house.")
 			room = 3
@@ -121,6 +121,9 @@ def room4(inputstr, itemlist):	#Front of House
 	elif inputstr.lower() == ("open mailbox"):
 		print("---------------------------------------------------------")
 		print("Opening the small mailbox reveals a leaflet.")
+	elif inputstr.lower() == ("open door"):
+		print("---------------------------------------------------------")
+		print("The door is boarded shut too tightly")
 	elif inputstr.lower() == ("go north"):
 		room = 1
 	elif inputstr.lower() == ("go west"):
@@ -131,7 +134,7 @@ def room4(inputstr, itemlist):	#Front of House
 	elif inputstr.lower() == ("go southwest"):
 		room = 8
 	elif inputstr.lower() == ("read leaflet"):
-		if items.useItem(leaflet, itemlist):
+		if items.useItem('leaflet', itemlist):
 			print("---------------------------------------------------------")
 			print("Welcome to the Unofficial Python Version of Zork. Your mission is to find a Jade Statue.")
 		else:
@@ -405,7 +408,7 @@ def room12(inputstr, itemlist):
 	room = 12
 	if inputstr.lower() == ("go east"):
 		room = 1
-	elif inputstr.lower() == ("take tools"):
+	elif inputstr.lower() == ("pickup tools"):
 		print("---------------------------------------------------------")
 		print("There are way too many tools for you to take them all.")
 	elif inputstr.lower()[:8] == ("put down"):

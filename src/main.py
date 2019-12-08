@@ -129,4 +129,4 @@ while life:
     else:
         print('THIS IS AN ERROR! ROOM %s NOT DEFINED' % room)
         room = int(input('please choose room number'))
-    print(itemlist)
+    #print(itemlist)
