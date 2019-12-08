@@ -5,6 +5,8 @@ def room1(inputstr, itemlist):	#lake
 	room = 1
 	if inputstr.lower() == ("go south"):
 		room = 4
+	if inputstr.lower() == ("go west"):
+		room = 12
 	elif inputstr.lower() == ("swim"):
 		print("---------------------------------------------------------")
 		print("You don't have a change of clothes and you aren't here on vacation.")
@@ -288,5 +290,25 @@ def room11(inputstr, itemlist):
 			life = True
 	else:
 		print("---------------------------------------------------------")
-	
+	return [room, life]
+
+def room12(inputstr, itemlist):
+	life = True
+	room = 12
+	if inputstr.lower() == ("go east"):
+		room = 1
+	elif inputstr.lower() == ("take tools"):
+		print("---------------------------------------------------------")
+		print("There are way too many tools for you to take them all.")
+	elif inputstr.lower() == ("kick the bucket"):
+		print("---------------------------------------------------------")
+		print("You die.")
+		print("---------------------------------------------------------")
+		dead_inp = input("Do you want to continue? Y/N ")
+		if dead_inp.lower() == ("n"):
+			life = False
+		if dead_inp.lower() == ("y"):
+			life = True
+	else:
+		print("---------------------------------------------------------")
 	return [room, life]
