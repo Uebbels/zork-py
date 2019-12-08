@@ -22,6 +22,12 @@ def room1(inputstr, itemlist):	#lake
 			life = False
 		if dead_inp.lower() == ("y"):
 			life = True
+	elif inputstr.lower()[:8] == ("put down"):
+		if inputstr.lower()[9:] in itemlist:
+			items.put_down(inputstr.lower()[9:],room)
+			itemlist.remove(inputstr.lower()[9:])
+		else:
+			print('Invalid object to put down')
 	else:
 		print("---------------------------------------------------------")
 	return [room, life]

@@ -15,6 +15,7 @@ while life:
         print("A small pier juts out into the lake.")
         print("A fishing rod rests on the pier.")
         print("(You can see a white house in the distance to the south.)")
+        print('To the west lies an old boathouse.')
         action = input("What do you do? ")
         outcome = zork.room1(action, itemlist)
         room = outcome[0]
@@ -113,6 +114,16 @@ while life:
         print("Lying half buried in the mud is an old trunk, bulging with jewels.")
         action = input("What do you do? ")
         outcome = zork.room11(action, itemlist)
+        room = outcome[0]
+        life = outcome[1]
+    
+    elif room == 12:
+        print("---------------------------------------------------------")
+        print("You enter the old boathouse.")
+        print("There are no boats here, but there is an old workbench in the corner.")
+        print("A variety a tools are on the workbench.")
+        action = input("What do you do? ")
+        outcome = zork.room12(action, itemlist)
         room = outcome[0]
         life = outcome[1]
 
