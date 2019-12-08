@@ -11,3 +11,11 @@ To get started:
 1. Have Fun!
 
 **Note: This program is built to run on Python 3.**
+
+Brendan Uebelhoer
+​CSCI 101 – Section A
+Python Lab EC Code Enhancements
+
+I attempted and completed all three parts of the extra credit. My custome room is a boathouse, west of the lake, in which the player can find a crowbar to gain acess to the kitchen. 
+
+The biggest challenge in this assignment was understanding what was meant in the original code, so that it could be properly ported into my version. I accomplished this by refering heavily to the instructions provided, as well as returning to an original copy of the code. 
