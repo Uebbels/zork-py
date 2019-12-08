@@ -136,7 +136,7 @@ def room4(inputstr, itemlist):	#Front of House
 			print("Welcome to the Unofficial Python Version of Zork. Your mission is to find a Jade Statue.")
 		else:
 			print("---------------------------------------------------------")
-			print("What leaflet?)
+			print("What leaflet?")
 	elif inputstr.lower()[:8] == ("put down"):
 		if inputstr.lower()[9:] in itemlist:
 			items.put_down(inputstr.lower()[9:],room)
