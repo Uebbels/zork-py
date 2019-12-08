@@ -28,6 +28,10 @@ def room1(inputstr, itemlist):	#lake
 			itemlist.remove(inputstr.lower()[9:])
 		else:
 			print('Invalid object to put down')
+	elif inputstr.lower()[:6] == ("pickup"):
+		itemlist.append(items.pick_up(inputstr.lower()[7:],room))
+		if itemlist[-1] == None:
+			itemlist.remove(None)
 	else:
 		print("---------------------------------------------------------")
 	return [room, life]
@@ -44,6 +48,16 @@ def room2(inputstr, itemlist):	#Back of house
 	elif inputstr.lower() == ("cook"):
 		print("---------------------------------------------------------")
 		print("You never bothered to learn and don't want to burn the house down.")
+	elif inputstr.lower()[:8] == ("put down"):
+		if inputstr.lower()[9:] in itemlist:
+			items.put_down(inputstr.lower()[9:],room)
+			itemlist.remove(inputstr.lower()[9:])
+		else:
+			print('Invalid object to put down')
+	elif inputstr.lower()[:6] == ("pickup"):
+		itemlist.append(items.pick_up(inputstr.lower()[7:],room))
+		if itemlist[-1] == None:
+			itemlist.remove(None)
 	elif inputstr.lower() == ("kick the bucket"):
 		print("---------------------------------------------------------")
 		print("You die.")
@@ -71,6 +85,16 @@ def room3(inputstr, itemlist):	#Kitchen
 	if inputstr.lower() == ("take lantern"):
 		print("---------------------------------------------------------")
 		print("The lantern looks too heavy to carry")
+	elif inputstr.lower()[:8] == ("put down"):
+		if inputstr.lower()[9:] in itemlist:
+			items.put_down(inputstr.lower()[9:],room)
+			itemlist.remove(inputstr.lower()[9:])
+		else:
+			print('Invalid object to put down')
+	elif inputstr.lower()[:6] == ("pickup"):
+		itemlist.append(items.pick_up(inputstr.lower()[7:],room))
+		if itemlist[-1] == None:
+			itemlist.remove(None)
 	elif inputstr.lower() == ("kick the bucket"):
 		print("---------------------------------------------------------")
 		print("You die.")
@@ -105,6 +129,16 @@ def room4(inputstr, itemlist):
 	elif inputstr.lower() == ("read leaflet"):
 		print("---------------------------------------------------------")
 		print("Welcome to the Unofficial Python Version of Zork. Your mission is to find a Jade Statue.")
+	elif inputstr.lower()[:8] == ("put down"):
+		if inputstr.lower()[9:] in itemlist:
+			items.put_down(inputstr.lower()[9:],room)
+			itemlist.remove(inputstr.lower()[9:])
+		else:
+			print('Invalid object to put down')
+	elif inputstr.lower()[:6] == ("pickup"):
+		itemlist.append(items.pick_up(inputstr.lower()[7:],room))
+		if itemlist[-1] == None:
+			itemlist.remove(None)
 	elif inputstr.lower() == ("kick the bucket"):
 		print("---------------------------------------------------------")
 		print("You die.")
@@ -132,6 +166,16 @@ def room5(inputstr, itemlist):	#Attic
 		print("That seems like a rather rude thing to do")
 	elif inputstr.lower() == ("descend stairs"):
 		room = 3
+	elif inputstr.lower()[:8] == ("put down"):
+		if inputstr.lower()[9:] in itemlist:
+			items.put_down(inputstr.lower()[9:],room)
+			itemlist.remove(inputstr.lower()[9:])
+		else:
+			print('Invalid object to put down')
+	elif inputstr.lower()[:6] == ("pickup"):
+		itemlist.append(items.pick_up(inputstr.lower()[7:],room))
+		if itemlist[-1] == None:
+			itemlist.remove(None)
 	elif inputstr.lower() == ("kick the bucket"):
 		print("---------------------------------------------------------")
 		print("You die.")
@@ -152,6 +196,16 @@ def room6(inputstr, itemlist):	#maze entrance
 		room = 7
 	elif inputstr.lower() == ("go north"):
 		room = 10
+	elif inputstr.lower()[:8] == ("put down"):
+		if inputstr.lower()[9:] in itemlist:
+			items.put_down(inputstr.lower()[9:],room)
+			itemlist.remove(inputstr.lower()[9:])
+		else:
+			print('Invalid object to put down')
+	elif inputstr.lower()[:6] == ("pickup"):
+		itemlist.append(items.pick_up(inputstr.lower()[7:],room))
+		if itemlist[-1] == None:
+			itemlist.remove(None)
 	elif inputstr.lower() == ("kick the bucket"):
 		print("---------------------------------------------------------")
 		print("You die.")
@@ -204,6 +258,16 @@ def room8(inputstr, itemlist):	#Forest
 		print("Storm-tossed trees block your way.")
 	elif inputstr.lower() == ("go east"):
 		room = 9
+	elif inputstr.lower()[:8] == ("put down"):
+		if inputstr.lower()[9:] in itemlist:
+			items.put_down(inputstr.lower()[9:],room)
+			itemlist.remove(inputstr.lower()[9:])
+		else:
+			print('Invalid object to put down')
+	elif inputstr.lower()[:6] == ("pickup"):
+		itemlist.append(items.pick_up(inputstr.lower()[7:],room))
+		if itemlist[-1] == None:
+			itemlist.remove(None)
 	elif inputstr.lower() == ("kick the bucket"):
 		print("---------------------------------------------------------")
 		print("You die.")
@@ -225,6 +289,16 @@ def room9(inputstr, itemlist):	#Clearing
 		print("You see a large ogre and turn around.")
 	elif inputstr.lower() == ("descend grating"):
 		room = 10
+	elif inputstr.lower()[:8] == ("put down"):
+		if inputstr.lower()[9:] in itemlist:
+			items.put_down(inputstr.lower()[9:],room)
+			itemlist.remove(inputstr.lower()[9:])
+		else:
+			print('Invalid object to put down')
+	elif inputstr.lower()[:6] == ("pickup"):
+		itemlist.append(items.pick_up(inputstr.lower()[7:],room))
+		if itemlist[-1] == None:
+			itemlist.remove(None)
 	elif inputstr.lower() == ("kick the bucket"):
 		print("---------------------------------------------------------")
 		print("You die.")
@@ -261,6 +335,16 @@ def room10(inputstr, itemlist):	#cave
 		room = 11
 	elif inputstr.lower() == ("scale staircase"):
 		room = 11
+	elif inputstr.lower()[:8] == ("put down"):
+		if inputstr.lower()[9:] in itemlist:
+			items.put_down(inputstr.lower()[9:],room)
+			itemlist.remove(inputstr.lower()[9:])
+		else:
+			print('Invalid object to put down')
+	elif inputstr.lower()[:6] == ("pickup"):
+		itemlist.append(items.pick_up(inputstr.lower()[7:],room))
+		if itemlist[-1] == None:
+			itemlist.remove(None)
 	elif inputstr.lower() == ("kick the bucket"):
 		print("---------------------------------------------------------")
 		print("You die.")
@@ -285,6 +369,16 @@ def room11(inputstr, itemlist):
 			life = False
 		if exit_inp.lower() == ("y"):
 			life = True
+	elif inputstr.lower()[:8] == ("put down"):
+		if inputstr.lower()[9:] in itemlist:
+			items.put_down(inputstr.lower()[9:],room)
+			itemlist.remove(inputstr.lower()[9:])
+		else:
+			print('Invalid object to put down')
+	elif inputstr.lower()[:6] == ("pickup"):
+		itemlist.append(items.pick_up(inputstr.lower()[7:],room))
+		if itemlist[-1] == None:
+			itemlist.remove(None)
 	elif inputstr.lower() == ("kick the bucket"):
 		print("---------------------------------------------------------")
 		print("You die.")
@@ -306,6 +400,16 @@ def room12(inputstr, itemlist):
 	elif inputstr.lower() == ("take tools"):
 		print("---------------------------------------------------------")
 		print("There are way too many tools for you to take them all.")
+	elif inputstr.lower()[:8] == ("put down"):
+		if inputstr.lower()[9:] in itemlist:
+			items.put_down(inputstr.lower()[9:],room)
+			itemlist.remove(inputstr.lower()[9:])
+		else:
+			print('Invalid object to put down')
+	elif inputstr.lower()[:6] == ("pickup"):
+		itemlist.append(items.pick_up(inputstr.lower()[7:],room))
+		if itemlist[-1] == None:
+			itemlist.remove(None)
 	elif inputstr.lower() == ("kick the bucket"):
 		print("---------------------------------------------------------")
 		print("You die.")

@@ -1,6 +1,4 @@
 
-#TODO Define items in each room
-
 room0items = [] #room does not exist but list is needed for index purposes
 room1items = ['fishing rod']
 room2items = []
@@ -19,13 +17,14 @@ allItems = [room0items, room1items, room2items, room3items, room4items, room5ite
 
 # Returns item to be added to inventory if it exists in this room and removes it from the list of items in the coom
 def pick_up(itemName, roomNum):
-    print(itemName)
+    print(itemName,allItems[roomNum])
     if itemName in allItems[roomNum]:
+        print('debug 1')
         allItems[roomNum].remove(itemName)
         return itemName
     else:
         print("Not a valid item to pick up")
-        return -1
+        
 
 # Puts the item down in the current room, adds it to the item list of the current room, 
 # and returns 0 to indicate that it was successfully removed.
