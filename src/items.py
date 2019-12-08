@@ -17,9 +17,7 @@ allItems = [room0items, room1items, room2items, room3items, room4items, room5ite
 
 # Returns item to be added to inventory if it exists in this room and removes it from the list of items in the coom
 def pick_up(itemName, roomNum):
-    print(itemName,allItems[roomNum])
     if itemName in allItems[roomNum]:
-        print('debug 1')
         allItems[roomNum].remove(itemName)
         return itemName
     else:

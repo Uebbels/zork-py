@@ -45,7 +45,6 @@ while life:
         print("---------------------------------------------------------")
         print("You are standing in an open field west of a white house, with a boarded front door.")
         print("You can see a small lake to the north.")
-        print("(A secret path leads southwest into the forest.)")
         print("There is a Small Mailbox.")
         action = input("What do you do? ")
         outcome = zork.room4(action, itemlist)

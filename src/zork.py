@@ -40,9 +40,13 @@ def room2(inputstr, itemlist):	#Back of house
 	life = True
 	room = 2
 	if inputstr.lower() == ("go west"):
-		print("---------------------------------------------------------")
-		print("Opening a rickety window you climb into the house.")
-		room = 3
+		if items.useItem('crowbar', room):
+			print("---------------------------------------------------------")
+			print("Opening a rickety window you climb into the house.")
+			room = 3
+		else:
+			print("---------------------------------------------------------")
+			print("The window is jammed. Maybe if you had a crowbar?")
 	elif inputstr.lower() == ("go south"):
 		room = 4
 	elif inputstr.lower() == ("cook"):
@@ -108,7 +112,7 @@ def room3(inputstr, itemlist):	#Kitchen
 		print("---------------------------------------------------------")
 	return [room, life]
 
-def room4(inputstr, itemlist):
+def room4(inputstr, itemlist):	#Front of House
 	life = True
 	room = 4
 	if inputstr.lower() == ("take mailbox"):
@@ -127,8 +131,12 @@ def room4(inputstr, itemlist):
 	elif inputstr.lower() == ("go southwest"):
 		room = 8
 	elif inputstr.lower() == ("read leaflet"):
-		print("---------------------------------------------------------")
-		print("Welcome to the Unofficial Python Version of Zork. Your mission is to find a Jade Statue.")
+		if items.useItem(leaflet, itemlist):
+			print("---------------------------------------------------------")
+			print("Welcome to the Unofficial Python Version of Zork. Your mission is to find a Jade Statue.")
+		else:
+			print("---------------------------------------------------------")
+			print("What leaflet?)
 	elif inputstr.lower()[:8] == ("put down"):
 		if inputstr.lower()[9:] in itemlist:
 			items.put_down(inputstr.lower()[9:],room)
@@ -158,12 +166,12 @@ def room5(inputstr, itemlist):	#Attic
 	if inputstr.lower() == ("open box"):
 		print("---------------------------------------------------------")
 		print("In the box you find a diary")
-	elif inputstr.lower() == ("take diary"):
-		print("---------------------------------------------------------")
-		print("That seems like a rather rude thing to do")
 	elif inputstr.lower() == ("read diary"):
 		print("---------------------------------------------------------")
 		print("That seems like a rather rude thing to do")
+	elif inputstr.lower() == ("look out window"):
+		print("---------------------------------------------------------")
+		print("From here you can see a path leading SouthWest from the front of the house.")
 	elif inputstr.lower() == ("descend stairs"):
 		room = 3
 	elif inputstr.lower()[:8] == ("put down"):
